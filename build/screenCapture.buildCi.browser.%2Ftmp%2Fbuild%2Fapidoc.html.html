@@ -1,0 +1,2305 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/voltrue2/node-datetime">node-datetime (v1.0.0)</a>
+</h1>
+<h4>An extended Date object for javascript. 1. Handles offests by days and hours. 2. Built-in formatting function. 3. Time based value calculation.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime">module node-datetime</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.create">
+            function <span class="apidocSignatureSpan">node-datetime.</span>create
+            <span class="apidocSignatureSpan">(now, defaultFormat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.createTimedNumber">
+            function <span class="apidocSignatureSpan">node-datetime.</span>createTimedNumber
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.createTimedState">
+            function <span class="apidocSignatureSpan">node-datetime.</span>createTimedState
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime">
+            function <span class="apidocSignatureSpan">node-datetime.</span>datetime
+            <span class="apidocSignatureSpan">(now, defaultFormat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setDefaultFormat">
+            function <span class="apidocSignatureSpan">node-datetime.</span>setDefaultFormat
+            <span class="apidocSignatureSpan">(format)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setOffsetInDays">
+            function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInDays
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setOffsetInHours">
+            function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInHours
+            <span class="apidocSignatureSpan">(h)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber">
+            function <span class="apidocSignatureSpan">node-datetime.</span>timednumber
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate">
+            function <span class="apidocSignatureSpan">node-datetime.</span>timedstate
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-datetime.</span>datetime.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-datetime.</span>timednumber.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-datetime.</span>timedstate.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.create">module node-datetime.create</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.create.create">
+            function <span class="apidocSignatureSpan">node-datetime.</span>create
+            <span class="apidocSignatureSpan">(now, defaultFormat)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.createTimedNumber">module node-datetime.createTimedNumber</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.createTimedNumber.createTimedNumber">
+            function <span class="apidocSignatureSpan">node-datetime.</span>createTimedNumber
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.createTimedState">module node-datetime.createTimedState</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.createTimedState.createTimedState">
+            function <span class="apidocSignatureSpan">node-datetime.</span>createTimedState
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.datetime">module node-datetime.datetime</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.datetime">
+            function <span class="apidocSignatureSpan">node-datetime.</span>datetime
+            <span class="apidocSignatureSpan">(now, defaultFormat)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.datetime.prototype">module node-datetime.datetime.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype._convert">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>_convert
+            <span class="apidocSignatureSpan">(formatFragment)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype._updateDelta">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>_updateDelta
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.epoch">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>epoch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.format">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>format
+            <span class="apidocSignatureSpan">(format)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.getDatesInRange">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>getDatesInRange
+            <span class="apidocSignatureSpan">(dateObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.getHoursInRange">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>getHoursInRange
+            <span class="apidocSignatureSpan">(dateObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.getTime">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>getTime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.now">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>now
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.offsetInDays">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>offsetInDays
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.offsetInHours">
+            function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>offsetInHours
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.setDefaultFormat">module node-datetime.setDefaultFormat</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setDefaultFormat.setDefaultFormat">
+            function <span class="apidocSignatureSpan">node-datetime.</span>setDefaultFormat
+            <span class="apidocSignatureSpan">(format)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.setOffsetInDays">module node-datetime.setOffsetInDays</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setOffsetInDays.setOffsetInDays">
+            function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInDays
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.setOffsetInHours">module node-datetime.setOffsetInHours</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setOffsetInHours.setOffsetInHours">
+            function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInHours
+            <span class="apidocSignatureSpan">(h)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.timednumber">module node-datetime.timednumber</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.timednumber">
+            function <span class="apidocSignatureSpan">node-datetime.</span>timednumber
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.timednumber.prototype">module node-datetime.timednumber.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.calculateCurrentValueForDec">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>calculateCurrentValueForDec
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.calculateCurrentValueForInc">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>calculateCurrentValueForInc
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.dec">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>dec
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.getInterval">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getInterval
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.getLastUpdate">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getLastUpdate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.getMaxValue">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getMaxValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.getMinValue">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getMinValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.getStep">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getStep
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.getValue">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.inc">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>inc
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.reset">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.toObject">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>toObject
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timednumber.prototype.validate">
+            function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>validate
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.timedstate">module node-datetime.timedstate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.timedstate">
+            function <span class="apidocSignatureSpan">node-datetime.</span>timedstate
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.timedstate.prototype">module node-datetime.timedstate.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.backward">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>backward
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.forward">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>forward
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.getInterval">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>getInterval
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.getLastUpdate">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>getLastUpdate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.getState">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>getState
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.getStates">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>getStates
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.reset">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.toObject">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>toObject
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.timedstate.prototype.validate">
+            function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>validate
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime" id="apidoc.module.node-datetime">module node-datetime</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.create" id="apidoc.element.node-datetime.create">
+        function <span class="apidocSignatureSpan">node-datetime.</span>create
+        <span class="apidocSignatureSpan">(now, defaultFormat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (now, defaultFormat) {
+
+	if (!defaultFormat &amp;&amp; globalDefaultFormat) {
+		defaultFormat = globalDefaultFormat;
+	}
+
+	var d = new DateTime(now, defaultFormat);
+
+	if (offsets.days !== 0) {
+		d.offsetInDays(offsets.days);
+	}
+
+	if (offsets.hours !== 0) {
+		d.offsetsInHours(offsets.hours);
+	}
+
+	return d;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+**Example**:
+
+You could get current time of the past, for exmaple.
+
+```javascript
+var datetime = require('node-datetime');
+var past = '2015-01-01 00:00:00';
+var pastDateTime = datetime.<span class="apidocCodeKeywordSpan">create</span>(past);
+// get the current timestamp of the past
+setTimeout(function () {
+	var pastNow = pastDateTime.now();
+	// this would be 1420038010000
+	console.log(pastNow);
+	// this would be 2015-01-01 00:00:10
+	console.log(new Date(1420038010000));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.createTimedNumber" id="apidoc.element.node-datetime.createTimedNumber">
+        function <span class="apidocSignatureSpan">node-datetime.</span>createTimedNumber
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createTimedNumber = function (conf) {
+	return new TimedNumber(conf);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var datetime = require('node-datetime');
+var dt = datetime.create('2015-01-01 00:00:00');
+var dates = dt.getDatesInRange(datetime.create('2015-01-02 00:00:00'));
+// dates = [ ... ];
+// dates will contain instances of DateTime object from 2015-01-01 00:00:00 to 2015-01-02 00:00:00
+````
+
+#### .<span class="apidocCodeKeywordSpan">createTimedNumber</span>(conf [object])
+
+Returns an instance of TimedNumber that changes its value over time.
+
+conf:
+
+```javascript
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.createTimedState" id="apidoc.element.node-datetime.createTimedState">
+        function <span class="apidocSignatureSpan">node-datetime.</span>createTimedState
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createTimedState = function (conf) {
+	return new TimedState(conf);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// store it in database as JSON
+var json = timedNumber.toOjbect();
+// read json back from the database and reconstruct timed number object
+var timedNumber2 = datetime.createTimedNumber(json);
+// timedNumber2 will have the same state as timedNumber
+```
+
+### .<span class="apidocCodeKeywordSpan">createTimedState</span>(conf)
+
+Returns an instance of TimedState object that changes its state over time.
+
+conf:
+
+```
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime" id="apidoc.element.node-datetime.datetime">
+        function <span class="apidocSignatureSpan">node-datetime.</span>datetime
+        <span class="apidocSignatureSpan">(now, defaultFormat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DateTime(now, defaultFormat) {
+	this._created = Date.now();
+	this._now = (now) ? new Date(now) : new Date();
+	this._delta = this._created - this._now.getTime();
+	this._defaultFormat = defaultFormat || null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.setDefaultFormat" id="apidoc.element.node-datetime.setDefaultFormat">
+        function <span class="apidocSignatureSpan">node-datetime.</span>setDefaultFormat
+        <span class="apidocSignatureSpan">(format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaultFormat = function (format) {
+	globalDefaultFormat = format;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Sets a shared offset in hours.
+
+If this is set, all instances of DateTime object will have the given offset in hours.
+
+This can be individually overridden.
+
+#### .<span class="apidocCodeKeywordSpan">setDefaultFormat</span>(defaultFormat [string])
+
+Sets a shared default format.
+
+If this is set, all instances of DateTime object will have the given format as default.
+
+This can be individually overridden.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.setOffsetInDays" id="apidoc.element.node-datetime.setOffsetInDays">
+        function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInDays
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOffsetInDays = function (d) {
+
+	if (isNaN(d)) {
+		throw new Error('invalidOffset');
+	}
+
+	offsets.days = d;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var datetime = require('node-datetime');
+var dt = datetime.create();
+var fomratted = dt.format('m/d/Y H:M:S');
+// e.g. 04/28/2015 21:13:09
+```
+
+#### .<span class="apidocCodeKeywordSpan">setOffsetInDays</span>(offsetDays [number])
+
+Sets a shared offset in days.
+
+If this is set, all instances of DateTime object will have the given offset in days.
+
+This can be individually overridden.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.setOffsetInHours" id="apidoc.element.node-datetime.setOffsetInHours">
+        function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInHours
+        <span class="apidocSignatureSpan">(h)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOffsetInHours = function (h) {
+
+	if (isNaN(h)) {
+		throw new Error('invalidOffset');
+	}
+
+	offsets.hours = h;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber" id="apidoc.element.node-datetime.timednumber">
+        function <span class="apidocSignatureSpan">node-datetime.</span>timednumber
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TimedNumber(conf) {
+	this.validate(conf);
+	this.conf = conf;
+	this.current = this.conf.init;
+	this.lastUpdate = this.conf.lastUpdate || Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate" id="apidoc.element.node-datetime.timedstate">
+        function <span class="apidocSignatureSpan">node-datetime.</span>timedstate
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TimedState(conf) {
+	this.validate(conf);
+	this.conf = conf;
+	this.length = this.conf.states.length;
+	this.current = this.conf.init;
+	this.lastUpdate = this.conf.lastUpdate || Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.create" id="apidoc.module.node-datetime.create">module node-datetime.create</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.create.create" id="apidoc.element.node-datetime.create.create">
+        function <span class="apidocSignatureSpan">node-datetime.</span>create
+        <span class="apidocSignatureSpan">(now, defaultFormat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (now, defaultFormat) {
+
+	if (!defaultFormat &amp;&amp; globalDefaultFormat) {
+		defaultFormat = globalDefaultFormat;
+	}
+
+	var d = new DateTime(now, defaultFormat);
+
+	if (offsets.days !== 0) {
+		d.offsetInDays(offsets.days);
+	}
+
+	if (offsets.hours !== 0) {
+		d.offsetsInHours(offsets.hours);
+	}
+
+	return d;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+**Example**:
+
+You could get current time of the past, for exmaple.
+
+```javascript
+var datetime = require('node-datetime');
+var past = '2015-01-01 00:00:00';
+var pastDateTime = datetime.<span class="apidocCodeKeywordSpan">create</span>(past);
+// get the current timestamp of the past
+setTimeout(function () {
+	var pastNow = pastDateTime.now();
+	// this would be 1420038010000
+	console.log(pastNow);
+	// this would be 2015-01-01 00:00:10
+	console.log(new Date(1420038010000));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.createTimedNumber" id="apidoc.module.node-datetime.createTimedNumber">module node-datetime.createTimedNumber</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.createTimedNumber.createTimedNumber" id="apidoc.element.node-datetime.createTimedNumber.createTimedNumber">
+        function <span class="apidocSignatureSpan">node-datetime.</span>createTimedNumber
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createTimedNumber = function (conf) {
+	return new TimedNumber(conf);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var datetime = require('node-datetime');
+var dt = datetime.create('2015-01-01 00:00:00');
+var dates = dt.getDatesInRange(datetime.create('2015-01-02 00:00:00'));
+// dates = [ ... ];
+// dates will contain instances of DateTime object from 2015-01-01 00:00:00 to 2015-01-02 00:00:00
+````
+
+#### .<span class="apidocCodeKeywordSpan">createTimedNumber</span>(conf [object])
+
+Returns an instance of TimedNumber that changes its value over time.
+
+conf:
+
+```javascript
+{
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.createTimedState" id="apidoc.module.node-datetime.createTimedState">module node-datetime.createTimedState</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.createTimedState.createTimedState" id="apidoc.element.node-datetime.createTimedState.createTimedState">
+        function <span class="apidocSignatureSpan">node-datetime.</span>createTimedState
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createTimedState = function (conf) {
+	return new TimedState(conf);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// store it in database as JSON
+var json = timedNumber.toOjbect();
+// read json back from the database and reconstruct timed number object
+var timedNumber2 = datetime.createTimedNumber(json);
+// timedNumber2 will have the same state as timedNumber
+```
+
+### .<span class="apidocCodeKeywordSpan">createTimedState</span>(conf)
+
+Returns an instance of TimedState object that changes its state over time.
+
+conf:
+
+```
+{
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.datetime" id="apidoc.module.node-datetime.datetime">module node-datetime.datetime</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.datetime" id="apidoc.element.node-datetime.datetime.datetime">
+        function <span class="apidocSignatureSpan">node-datetime.</span>datetime
+        <span class="apidocSignatureSpan">(now, defaultFormat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DateTime(now, defaultFormat) {
+	this._created = Date.now();
+	this._now = (now) ? new Date(now) : new Date();
+	this._delta = this._created - this._now.getTime();
+	this._defaultFormat = defaultFormat || null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.datetime.prototype" id="apidoc.module.node-datetime.datetime.prototype">module node-datetime.datetime.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype._convert" id="apidoc.element.node-datetime.datetime.prototype._convert">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>_convert
+        <span class="apidocSignatureSpan">(formatFragment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_convert = function (formatFragment) {
+	var converter = FORMATS[formatFragment];
+
+	if (converter) {
+		return converter(this._now);
+	}
+	
+	// no converter
+	return formatFragment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	if (!format &amp;&amp; this._defaultFormat) {
+		format = this._defaultFormat;
+	}
+
+	var str = '';
+	for (var i = 0, len = format.length; i &lt; len; i++) {
+		str += this.<span class="apidocCodeKeywordSpan">_convert</span>(format[i]);
+	}
+	return str;
+};
+
+DateTime.prototype.now = function () {
+	return Date.now() - this._delta;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype._updateDelta" id="apidoc.element.node-datetime.datetime.prototype._updateDelta">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>_updateDelta
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_updateDelta = function () {
+	this._delta = this._created - this._now.getTime();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	return this._now.getTime();
+};
+
+DateTime.prototype.offsetInDays = function (offset) {
+	var next = new Date(this._now);
+	next.setDate(next.getDate() + offset);
+	this._now = next;
+	this.<span class="apidocCodeKeywordSpan">_updateDelta</span>();
+};
+
+DateTime.prototype.offsetInHours = function (offset) {
+	var next = new Date(this._now);
+	next.setHours(next.getHours() + offset);
+	this._now = next;
+	this._updateDelta();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype.epoch" id="apidoc.element.node-datetime.datetime.prototype.epoch">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>epoch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">epoch = function () {
+	return Math.floor(this.getTime() / 1000);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**NOTE:** The method automatically calculates the offset time.
+
+#### .getTime()
+
+Returns a fixed unix timestamp in milliseconds.
+
+#### .<span class="apidocCodeKeywordSpan">epoch</span>()
+
+Returns a fixed unix timestamp in seconds.
+
+#### .getDatesInRange(date [mix])
+
+Returns an array of DateTime objects within the given range in days.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype.format" id="apidoc.element.node-datetime.datetime.prototype.format">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>format
+        <span class="apidocSignatureSpan">(format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">format = function (format) {
+
+	if (!format &amp;&amp; this._defaultFormat) {
+		format = this._defaultFormat;
+	}
+
+	var str = '';
+	for (var i = 0, len = format.length; i &lt; len; i++) {
+		str += this._convert(format[i]);
+	}
+	return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`time` can be a `YYYY-MM-DD HH:MM:SS` style string, javascript Date object, or timestamp such as `Date.now()`.
+
+Example:
+
+```javascript
+var datetime = require('node-datetime');
+var dt = datetime.create();
+var fomratted = dt.<span class="apidocCodeKeywordSpan">format</span>('m/d/Y H:M:S');
+// e.g. 04/28/2015 21:13:09
+```
+
+#### .setOffsetInDays(offsetDays [number])
+
+Sets a shared offset in days.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype.getDatesInRange" id="apidoc.element.node-datetime.datetime.prototype.getDatesInRange">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>getDatesInRange
+        <span class="apidocSignatureSpan">(dateObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDatesInRange = function (dateObj) {
+
+	if (dateObj instanceof DateTime) {
+		dateObj = dateObj._now;
+	}
+
+	if (this.getTime() &gt;= dateObj.getTime()) {
+		throw new Error('start time cannot be greater than the end time');
+	}
+
+	var list = [];
+	var dir = (dateObj.getTime() &gt;= this.getTime()) ? 1 : -1;
+	var diff = dateObj.getTime() - this.getTime() * dir;
+	var current = new DateTime(this._now);
+	
+	while (diff &gt; 0) {
+		list.push(current);
+		var next = new DateTime(current.getTime());
+		next.offsetInDays(1 * dir);	
+		current = next;
+		diff -= ONEDAY;
+	}
+
+	return list;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns a fixed unix timestamp in milliseconds.
+
+#### .epoch()
+
+Returns a fixed unix timestamp in seconds.
+
+#### .<span class="apidocCodeKeywordSpan">getDatesInRange</span>(date [mix])
+
+Returns an array of DateTime objects within the given range in days.
+
+**NOTE**: `date` can be either DateTime or Date.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype.getHoursInRange" id="apidoc.element.node-datetime.datetime.prototype.getHoursInRange">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>getHoursInRange
+        <span class="apidocSignatureSpan">(dateObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHoursInRange = function (dateObj) {
+
+	if (dateObj instanceof DateTime) {
+		dateObj = dateObj._now;
+	}
+
+	if (this._now.getTime() &gt;= dateObj.getTime()) {
+		throw new Error('start time cannot be greater than the end time');
+	}
+
+	var list = [];
+	var dir = (dateObj.getTime() &gt;= this._now.getTime()) ? 1 : -1;
+	var diff = dateObj.getTime() - this._now.getTime() * dir;
+	var current = new DateTime(this._now);
+	
+	while (diff &gt; 0) {
+		list.push(current);
+		var next = new DateTime(current.getTime());
+		next.offsetInHours(1 * dir);	
+		current = next;
+		diff -= ONEHOUR;
+	}
+
+	return list;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype.getTime" id="apidoc.element.node-datetime.datetime.prototype.getTime">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>getTime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTime = function () {
+	return this._now.getTime();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	// this would be 1420038010000
+	console.log(pastNow);
+	// this would be 2015-01-01 00:00:10
+	console.log(new Date(1420038010000));
+}, 1000);
+```
+
+### .<span class="apidocCodeKeywordSpan">getTime</span>()
+
+This API is the same as former `.now()`. It returns the timestamp of `datetime` object.
+
+**Example**:
+
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype.now" id="apidoc.element.node-datetime.datetime.prototype.now">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>now
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">now = function () {
+	return Date.now() - this._delta;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`npm node-datetime`
+
+# Backward Compatibilty Break Warning
+
+From version `1.0.0`, certain APIs have changed their behavior.
+
+### .<span class="apidocCodeKeywordSpan">now</span>()
+
+This API used to return a fixed timestamp in milliseconds meaning that it was returning the timestamp of the instance of `datetime
+`.
+
+Now `.now()` returns a calculated current timestamp in milliseconds with time offset if given.
+
+**Example**:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype.offsetInDays" id="apidoc.element.node-datetime.datetime.prototype.offsetInDays">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>offsetInDays
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">offsetInDays = function (offset) {
+	var next = new Date(this._now);
+	next.setDate(next.getDate() + offset);
+	this._now = next;
+	this._updateDelta();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+|d|Date with leading 0|
+|H|Hours with leading 0 in 24 hours format|
+|I|Hours with leading 0 in 12 hours format|
+|M|Minutes with leading 0|
+|S|Seconds with leading 0|
+|N|Milliseconds with leading 0|
+
+#### .<span class="apidocCodeKeywordSpan">offsetInDays</span>(offset [number])
+
+Offests the date.
+
+**NOTE**: By giving more than 30 days or 365 days, it can exceed current year or month.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.datetime.prototype.offsetInHours" id="apidoc.element.node-datetime.datetime.prototype.offsetInHours">
+        function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>offsetInHours
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">offsetInHours = function (offset) {
+	var next = new Date(this._now);
+	next.setHours(next.getHours() + offset);
+	this._now = next;
+	this._updateDelta();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascripript
+var datetime = require('node-datetime');
+var dt = datetime.create();
+// 1 day in the past
+dt.offsetInDays(-1);
+```
+
+#### .<span class="apidocCodeKeywordSpan">offsetInHours</span>(offset [number])
+
+Offests the hours.
+
+**NOTE**: By giving more than 24 hours, it can exceed current date and so on.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.setDefaultFormat" id="apidoc.module.node-datetime.setDefaultFormat">module node-datetime.setDefaultFormat</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.setDefaultFormat.setDefaultFormat" id="apidoc.element.node-datetime.setDefaultFormat.setDefaultFormat">
+        function <span class="apidocSignatureSpan">node-datetime.</span>setDefaultFormat
+        <span class="apidocSignatureSpan">(format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaultFormat = function (format) {
+	globalDefaultFormat = format;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Sets a shared offset in hours.
+
+If this is set, all instances of DateTime object will have the given offset in hours.
+
+This can be individually overridden.
+
+#### .<span class="apidocCodeKeywordSpan">setDefaultFormat</span>(defaultFormat [string])
+
+Sets a shared default format.
+
+If this is set, all instances of DateTime object will have the given format as default.
+
+This can be individually overridden.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.setOffsetInDays" id="apidoc.module.node-datetime.setOffsetInDays">module node-datetime.setOffsetInDays</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.setOffsetInDays.setOffsetInDays" id="apidoc.element.node-datetime.setOffsetInDays.setOffsetInDays">
+        function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInDays
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOffsetInDays = function (d) {
+
+	if (isNaN(d)) {
+		throw new Error('invalidOffset');
+	}
+
+	offsets.days = d;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var datetime = require('node-datetime');
+var dt = datetime.create();
+var fomratted = dt.format('m/d/Y H:M:S');
+// e.g. 04/28/2015 21:13:09
+```
+
+#### .<span class="apidocCodeKeywordSpan">setOffsetInDays</span>(offsetDays [number])
+
+Sets a shared offset in days.
+
+If this is set, all instances of DateTime object will have the given offset in days.
+
+This can be individually overridden.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.setOffsetInHours" id="apidoc.module.node-datetime.setOffsetInHours">module node-datetime.setOffsetInHours</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.setOffsetInHours.setOffsetInHours" id="apidoc.element.node-datetime.setOffsetInHours.setOffsetInHours">
+        function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInHours
+        <span class="apidocSignatureSpan">(h)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOffsetInHours = function (h) {
+
+	if (isNaN(h)) {
+		throw new Error('invalidOffset');
+	}
+
+	offsets.hours = h;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.timednumber" id="apidoc.module.node-datetime.timednumber">module node-datetime.timednumber</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.timednumber" id="apidoc.element.node-datetime.timednumber.timednumber">
+        function <span class="apidocSignatureSpan">node-datetime.</span>timednumber
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TimedNumber(conf) {
+	this.validate(conf);
+	this.conf = conf;
+	this.current = this.conf.init;
+	this.lastUpdate = this.conf.lastUpdate || Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.timednumber.prototype" id="apidoc.module.node-datetime.timednumber.prototype">module node-datetime.timednumber.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.calculateCurrentValueForDec" id="apidoc.element.node-datetime.timednumber.prototype.calculateCurrentValueForDec">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>calculateCurrentValueForDec
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateCurrentValueForDec = function () {
+	if (this.current === this.conf.min) {
+		return this.current;
+	}
+	var now = Date.now();
+	var timePast = now - this.lastUpdate;
+	var steps = Math.floor(timePast / this.conf.interval);
+	var decValue = this.conf.step * steps;	
+	this.current = (this.current - decValue &gt;= this.conf.min) ? this.current - decValue : this.conf.min;
+	if (decValue) {
+		this.lastUpdate = now;
+	}
+	return this.current;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// public
+TimedNumber.prototype.getValue = function () {
+	switch (this.conf.type) {
+		case INC:
+			return this.calculateCurrentValueForInc();
+		case DEC:
+			return this.<span class="apidocCodeKeywordSpan">calculateCurrentValueForDec</span>();
+	}
+};
+
+// public
+TimedNumber.prototype.inc = function (value) {
+	if (!value || isNaN(value)) {
+		return false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.calculateCurrentValueForInc" id="apidoc.element.node-datetime.timednumber.prototype.calculateCurrentValueForInc">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>calculateCurrentValueForInc
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateCurrentValueForInc = function () {
+	if (this.current === this.conf.max) {
+		return this.current;
+	}
+	var now = Date.now();
+	var timePast = now - this.lastUpdate;
+	var steps = Math.floor(timePast / this.conf.interval);
+	var incValue = this.conf.step * steps;
+	this.current = (this.current + incValue &lt;= this.conf.max) ? this.current + incValue : this.conf.max;
+	if (incValue) {
+		this.lastUpdate = now;
+	}
+	return this.current;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	this.lastUpdate = this.conf.lastUpdate || Date.now();
+}
+
+// public
+TimedNumber.prototype.getValue = function () {
+	switch (this.conf.type) {
+		case INC:
+			return this.<span class="apidocCodeKeywordSpan">calculateCurrentValueForInc</span>();
+		case DEC:
+			return this.calculateCurrentValueForDec();
+	}
+};
+
+// public
+TimedNumber.prototype.inc = function (value) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.dec" id="apidoc.element.node-datetime.timednumber.prototype.dec">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>dec
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dec = function (value) {
+	if (!value || isNaN(value)) {
+		return false;
+	}
+	if (this.current - value &lt; this.conf.min) {
+		return false;
+	}
+	
+	if (this.current === this.conf.init) {
+		// initial mod
+		this.lastUpdate = Date.now();
+	}
+	
+	// if type is dec, decreasing means recovering
+	this.current -= value;
+
+	this.lastUpdate = Date.now();
+
+	return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        min: 0,
+        interval: 1000,
+        step: 1,
+        type: 'inc',
+        init: 10
+};
+var td = datetime.createTimedNumber(config);
+td.<span class="apidocCodeKeywordSpan">dec</span>(5);
+setTimeout(function () {
+        var value = td.getValue();
+        // value should be 6
+}, 1000);
+```
+
+### TimedNumber Class
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.getInterval" id="apidoc.element.node-datetime.timednumber.prototype.getInterval">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getInterval
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getInterval = function () {
+	return this.conf.interval;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns maximum value.
+
+#### .getMinValue()
+
+Returns minimum value.
+
+#### .<span class="apidocCodeKeywordSpan">getInterval</span>()
+
+Returns the interval for every update in milliseconds.
+
+#### .getStep()
+
+Returns the value of step for every update.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.getLastUpdate" id="apidoc.element.node-datetime.timednumber.prototype.getLastUpdate">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getLastUpdate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastUpdate = function () {
+	return this.lastUpdate;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.getMaxValue" id="apidoc.element.node-datetime.timednumber.prototype.getMaxValue">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getMaxValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMaxValue = function () {
+	return this.conf.max;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns `true` if successful.
+
+#### .reset()
+
+Resets the state of `TimedNumber` object to its initial state.
+
+#### .<span class="apidocCodeKeywordSpan">getMaxValue</span>()
+
+Returns maximum value.
+
+#### .getMinValue()
+
+Returns minimum value.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.getMinValue" id="apidoc.element.node-datetime.timednumber.prototype.getMinValue">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getMinValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMinValue = function () {
+	return this.conf.min;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Resets the state of `TimedNumber` object to its initial state.
+
+#### .getMaxValue()
+
+Returns maximum value.
+
+#### .<span class="apidocCodeKeywordSpan">getMinValue</span>()
+
+Returns minimum value.
+
+#### .getInterval()
+
+Returns the interval for every update in milliseconds.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.getStep" id="apidoc.element.node-datetime.timednumber.prototype.getStep">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getStep
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getStep = function () {
+	return this.conf.step;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns minimum value.
+
+#### .getInterval()
+
+Returns the interval for every update in milliseconds.
+
+#### .<span class="apidocCodeKeywordSpan">getStep</span>()
+
+Returns the value of step for every update.
+
+#### .toObject()
+
+Returns a JSON format of `TimedNumber` object.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.getValue" id="apidoc.element.node-datetime.timednumber.prototype.getValue">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>getValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getValue = function () {
+	switch (this.conf.type) {
+		case INC:
+			return this.calculateCurrentValueForInc();
+		case DEC:
+			return this.calculateCurrentValueForDec();
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        interval: 1000,
+        step: 1,
+        type: 'inc',
+        init: 0
+};
+var td = datetime.createTimedNumber(config);
+setTimeout(function () {
+        var value = td.<span class="apidocCodeKeywordSpan">getValue</span>();
+        // value should be 1
+}, 1000);
+```
+
+```javascript
+var datetime = require('node-datetime');
+var config = {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.inc" id="apidoc.element.node-datetime.timednumber.prototype.inc">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>inc
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inc = function (value) {
+	if (!value || isNaN(value)) {
+		return false;
+	}
+	if (this.current + value &gt; this.conf.max) {
+		return false;
+	}
+	
+	if (this.current === this.conf.init) {
+		// initial mod
+		this.lastUpdate = Date.now();
+	}
+
+	// if type is inc, increasing means recovering
+	this.current += value;
+
+	this.lastUpdate = Date.now();
+
+	return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### TimedNumber Class
+
+#### .getValue()
+
+Returns the current value.
+
+#### .<span class="apidocCodeKeywordSpan">inc</span>(incrementValue [number])
+
+Increments the current value by incrementValue.
+
+Returns `true` if successful.
+
+#### .dec(decrementValue [number])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.reset" id="apidoc.element.node-datetime.timednumber.prototype.reset">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+	this.current = this.conf.init;
+	this.lastUpdate = Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### .dec(decrementValue [number])
+
+Decrements the current value by decrementValue.
+
+Returns `true` if successful.
+
+#### .<span class="apidocCodeKeywordSpan">reset</span>()
+
+Resets the state of `TimedNumber` object to its initial state.
+
+#### .getMaxValue()
+
+Returns maximum value.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.toObject" id="apidoc.element.node-datetime.timednumber.prototype.toObject">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>toObject
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toObject = function () {
+	var obj = {};
+	obj.current = this.current;
+	obj.lastUpdate = this.lastUpdate;
+	for (var key in this.conf) {
+		obj[key] = this.conf[key];
+	}
+	return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns the interval for every update in milliseconds.
+
+#### .getStep()
+
+Returns the value of step for every update.
+
+#### .<span class="apidocCodeKeywordSpan">toObject</span>()
+
+Returns a JSON format of `TimedNumber` object.
+
+You can reconstruct exact same timed number object from this JSON object.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timednumber.prototype.validate" id="apidoc.element.node-datetime.timednumber.prototype.validate">
+        function <span class="apidocSignatureSpan">node-datetime.timednumber.prototype.</span>validate
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (conf) {
+	if (!conf.hasOwnProperty('max') || isNaN(conf.max)) {
+		throw new Error('invalid max: ' + conf.max);
+	}
+	if (!conf.hasOwnProperty('min') || isNaN(conf.min) || conf.min &gt;= conf.max) {
+		throw new Error('invalid min: ' + conf.min);
+	}
+	if (!conf.hasOwnProperty('interval') || isNaN(conf.interval) || conf.interval &lt;= 0) {
+		throw new Error('invalid interval: ' + conf.interval);
+	}
+	if (!conf.hasOwnProperty('type') || (conf.type !== INC &amp;&amp; conf.type !== DEC)) {
+		throw new Error('invalid type: ' + conf.type);
+	}
+	if (!conf.hasOwnProperty('init') || isNaN(conf.init) || conf.init &lt;= 0) {
+		throw new Error('invalid init: ' + conf.init);
+	}
+	if (!conf.hasOwnProperty('step') || isNaN(conf.step) || conf.step &lt;= 0) {
+		throw new Error('invalid step: ' + conf.step);
+	}
+	if (conf.type === INC &amp;&amp; conf.step &gt; conf.max) {
+		throw new Error('step must not be greater than max');
+	}
+	if (conf.type === DEC &amp;&amp; conf.step &lt; conf.min) {
+		throw new Error('step must not be smaller than min');
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        step: [number], // update step e.g. is step = 2, it will inc/dec 2 every interval
+        type: [string], // inc: increment, dec: decrement
+        init: [number], // cannot be greater than max and smaller than min
+	lastUpdate: [*number] // an optional timestamp to conrtol last update state
+}
+*/
+function TimedNumber(conf) {
+	this.<span class="apidocCodeKeywordSpan">validate</span>(conf);
+	this.conf = conf;
+	this.current = this.conf.init;
+	this.lastUpdate = this.conf.lastUpdate || Date.now();
+}
+
+// public
+TimedNumber.prototype.getValue = function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.timedstate" id="apidoc.module.node-datetime.timedstate">module node-datetime.timedstate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.timedstate" id="apidoc.element.node-datetime.timedstate.timedstate">
+        function <span class="apidocSignatureSpan">node-datetime.</span>timedstate
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TimedState(conf) {
+	this.validate(conf);
+	this.conf = conf;
+	this.length = this.conf.states.length;
+	this.current = this.conf.init;
+	this.lastUpdate = this.conf.lastUpdate || Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-datetime.timedstate.prototype" id="apidoc.module.node-datetime.timedstate.prototype">module node-datetime.timedstate.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.backward" id="apidoc.element.node-datetime.timedstate.prototype.backward">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>backward
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">backward = function (value) {
+	if (!value) {
+		// if value is not given it defaults  to 1
+		value = 1;
+	}
+	if (!value || isNaN(value)) {
+		return false;
+	}
+	if (this.current - value &lt; 0) {
+		return false;
+	}
+	
+	if (this.current === this.conf.init) {
+		// initial mod
+		this.lastUpdate = Date.now();
+	}
+	
+	// move the current cursor of the array index backward
+	this.current -= value;
+
+	this.lastUpdate = Date.now();
+
+	return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns the current state.
+
+#### .forward(position [*number])
+
+Forces the state to move forward by the given number. If no position is given, it will move forward by one.
+
+#### .<span class="apidocCodeKeywordSpan">backward</span>(position [*number])
+
+Forces the state to move backward by the given number, If no position is given, it will move backward by one.
+
+#### .getStates()
+
+Returns the state array.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.forward" id="apidoc.element.node-datetime.timedstate.prototype.forward">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>forward
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forward = function (value) {
+	if (!value) {
+		// if value is not given it defaults  to 1
+		value = 1;
+	}
+	if (!value || isNaN(value)) {
+		return false;
+	}
+	if (this.current + value &gt;= this.length) {
+		return false;
+	}
+	
+	if (this.current === this.conf.init) {
+		// initial mod
+		this.lastUpdate = Date.now();
+	}
+
+	// move the current cursor of the array index forward
+	this.current += value;
+
+	this.lastUpdate = Date.now();
+
+	return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### TimedState Class
+
+#### .getState()
+
+Returns the current state.
+
+#### .<span class="apidocCodeKeywordSpan">forward</span>(position [*number])
+
+Forces the state to move forward by the given number. If no position is given, it will move forward by one.
+
+#### .backward(position [*number])
+
+Forces the state to move backward by the given number, If no position is given, it will move backward by one.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.getInterval" id="apidoc.element.node-datetime.timedstate.prototype.getInterval">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>getInterval
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getInterval = function () {
+	return this.conf.interval;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns maximum value.
+
+#### .getMinValue()
+
+Returns minimum value.
+
+#### .<span class="apidocCodeKeywordSpan">getInterval</span>()
+
+Returns the interval for every update in milliseconds.
+
+#### .getStep()
+
+Returns the value of step for every update.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.getLastUpdate" id="apidoc.element.node-datetime.timedstate.prototype.getLastUpdate">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>getLastUpdate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastUpdate = function () {
+	return this.lastUpdate;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.getState" id="apidoc.element.node-datetime.timedstate.prototype.getState">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>getState
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getState = function () {
+	var now = Date.now();
+	var timePast = now - this.lastUpdate;
+	var steps = Math.floor(timePast / this.conf.interval);
+	var nextPos = steps + this.current;	
+
+	if (nextPos &gt;= this.length) {
+		if (this.conf.loop) {
+			nextPos = (steps + this.current) - (this.length);	
+		} else {
+			// we don't loop and stop at the end of the state
+			nextPos = this.length - 1;
+		}
+	}
+
+	return this.conf.states[nextPos];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+// create the TimedState object  that changes its state every 1 second from 'one' and it stops at 'three'
+var ts = datetime.createTimedState(conf);
+```
+
+### TimedState Class
+
+#### .<span class="apidocCodeKeywordSpan">getState</span>()
+
+Returns the current state.
+
+#### .forward(position [*number])
+
+Forces the state to move forward by the given number. If no position is given, it will move forward by one.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.getStates" id="apidoc.element.node-datetime.timedstate.prototype.getStates">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>getStates
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getStates = function () {
+	return this.conf.states.map(function (elm) {
+		return elm;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Forces the state to move forward by the given number. If no position is given, it will move forward by one.
+
+#### .backward(position [*number])
+
+Forces the state to move backward by the given number, If no position is given, it will move backward by one.
+
+#### .<span class="apidocCodeKeywordSpan">getStates</span>()
+
+Returns the state array.
+
+#### .getInterval()
+
+Returns the interval in milliseconds
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.reset" id="apidoc.element.node-datetime.timedstate.prototype.reset">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+	this.current = this.conf.init;
+	this.lastUpdate = Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### .dec(decrementValue [number])
+
+Decrements the current value by decrementValue.
+
+Returns `true` if successful.
+
+#### .<span class="apidocCodeKeywordSpan">reset</span>()
+
+Resets the state of `TimedNumber` object to its initial state.
+
+#### .getMaxValue()
+
+Returns maximum value.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.toObject" id="apidoc.element.node-datetime.timedstate.prototype.toObject">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>toObject
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toObject = function () {
+	var obj = {};
+	obj.current = this.current;
+	obj.lastUpdate = this.lastUpdate;
+	for (var key in this.conf) {
+		obj[key] = this.conf[key];
+	}
+	return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Returns the interval for every update in milliseconds.
+
+#### .getStep()
+
+Returns the value of step for every update.
+
+#### .<span class="apidocCodeKeywordSpan">toObject</span>()
+
+Returns a JSON format of `TimedNumber` object.
+
+You can reconstruct exact same timed number object from this JSON object.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-datetime.timedstate.prototype.validate" id="apidoc.element.node-datetime.timedstate.prototype.validate">
+        function <span class="apidocSignatureSpan">node-datetime.timedstate.prototype.</span>validate
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (conf) {
+	if (!conf.hasOwnProperty('states') || !Array.isArray(conf.states) || conf.states.length === 0) {
+		throw new Error('invalid states: ' + conf.states);
+	}
+	if (!conf.hasOwnProperty('interval') || isNaN(conf.interval) || conf.interval &lt;= 0) {
+		throw new Error('invalid interval: ' + conf.interval);
+	}
+	if (!conf.hasOwnProperty('init') || isNaN(conf.init) || conf.init &lt; 0) {
+		throw new Error('invalid init: ' + conf.init);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        step: [number], // update step e.g. is step = 2, it will inc/dec 2 every interval
+        type: [string], // inc: increment, dec: decrement
+        init: [number], // cannot be greater than max and smaller than min
+	lastUpdate: [*number] // an optional timestamp to conrtol last update state
+}
+*/
+function TimedNumber(conf) {
+	this.<span class="apidocCodeKeywordSpan">validate</span>(conf);
+	this.conf = conf;
+	this.current = this.conf.init;
+	this.lastUpdate = this.conf.lastUpdate || Date.now();
+}
+
+// public
+TimedNumber.prototype.getValue = function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
