@@ -1,4 +1,7 @@
-# api documentation for  [node-datetime (v1.0.0)](https://github.com/voltrue2/node-datetime)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-datetime.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-datetime) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-datetime.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-datetime)
+# npmdoc-node-datetime
+
+#### basic api documentation for  [node-datetime (v1.0.0)](https://github.com/voltrue2/node-datetime)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-datetime.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-datetime) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-datetime.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-datetime)
+
 #### An extended Date object for javascript. 1. Handles offests by days and hours. 2. Built-in formatting function. 3. Time based value calculation.
 
 [![NPM](https://nodei.co/npm/node-datetime.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-datetime)
@@ -92,7 +95,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "bin": {}
 }
 ```
 
