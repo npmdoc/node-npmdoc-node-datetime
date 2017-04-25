@@ -162,45 +162,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.create">module node-datetime.create</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.create.create">
-            function <span class="apidocSignatureSpan">node-datetime.</span>create
-            <span class="apidocSignatureSpan">(now, defaultFormat)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.createTimedNumber">module node-datetime.createTimedNumber</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.createTimedNumber.createTimedNumber">
-            function <span class="apidocSignatureSpan">node-datetime.</span>createTimedNumber
-            <span class="apidocSignatureSpan">(conf)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.createTimedState">module node-datetime.createTimedState</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.createTimedState.createTimedState">
-            function <span class="apidocSignatureSpan">node-datetime.</span>createTimedState
-            <span class="apidocSignatureSpan">(conf)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
     <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.datetime">module node-datetime.datetime</a><ol>
 
         <li>
@@ -302,45 +263,6 @@
             <a class="apidocElementLiA" href="#apidoc.element.node-datetime.datetime.prototype.offsetInHours">
             function <span class="apidocSignatureSpan">node-datetime.datetime.prototype.</span>offsetInHours
             <span class="apidocSignatureSpan">(offset)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.setDefaultFormat">module node-datetime.setDefaultFormat</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setDefaultFormat.setDefaultFormat">
-            function <span class="apidocSignatureSpan">node-datetime.</span>setDefaultFormat
-            <span class="apidocSignatureSpan">(format)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.setOffsetInDays">module node-datetime.setOffsetInDays</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setOffsetInDays.setOffsetInDays">
-            function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInDays
-            <span class="apidocSignatureSpan">(d)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.node-datetime.setOffsetInHours">module node-datetime.setOffsetInHours</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.node-datetime.setOffsetInHours.setOffsetInHours">
-            function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInHours
-            <span class="apidocSignatureSpan">(h)</span>
             </a>
 
         </li>
@@ -841,129 +763,6 @@ This can be individually overridden.
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.node-datetime.create" id="apidoc.module.node-datetime.create">module node-datetime.create</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.node-datetime.create.create" id="apidoc.element.node-datetime.create.create">
-        function <span class="apidocSignatureSpan">node-datetime.</span>create
-        <span class="apidocSignatureSpan">(now, defaultFormat)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">create = function (now, defaultFormat) {
-
-	if (!defaultFormat &#x26;&#x26; globalDefaultFormat) {
-		defaultFormat = globalDefaultFormat;
-	}
-
-	var d = new DateTime(now, defaultFormat);
-
-	if (offsets.days !== 0) {
-		d.offsetInDays(offsets.days);
-	}
-
-	if (offsets.hours !== 0) {
-		d.offsetsInHours(offsets.hours);
-	}
-
-	return d;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-**Example**:
-
-You could get current time of the past, for exmaple.
-
-```javascript
-var datetime = require(&#x27;node-datetime&#x27;);
-var past = &#x27;2015-01-01 00:00:00&#x27;;
-var pastDateTime = datetime.<span class="apidocCodeKeywordSpan">create</span>(past);
-// get the current timestamp of the past
-setTimeout(function () {
-	var pastNow = pastDateTime.now();
-	// this would be 1420038010000
-	console.log(pastNow);
-	// this would be 2015-01-01 00:00:10
-	console.log(new Date(1420038010000));
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.node-datetime.createTimedNumber" id="apidoc.module.node-datetime.createTimedNumber">module node-datetime.createTimedNumber</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.node-datetime.createTimedNumber.createTimedNumber" id="apidoc.element.node-datetime.createTimedNumber.createTimedNumber">
-        function <span class="apidocSignatureSpan">node-datetime.</span>createTimedNumber
-        <span class="apidocSignatureSpan">(conf)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">createTimedNumber = function (conf) {
-	return new TimedNumber(conf);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-var datetime = require(&#x27;node-datetime&#x27;);
-var dt = datetime.create(&#x27;2015-01-01 00:00:00&#x27;);
-var dates = dt.getDatesInRange(datetime.create(&#x27;2015-01-02 00:00:00&#x27;));
-// dates = [ ... ];
-// dates will contain instances of DateTime object from 2015-01-01 00:00:00 to 2015-01-02 00:00:00
-````
-
-#### .<span class="apidocCodeKeywordSpan">createTimedNumber</span>(conf [object])
-
-Returns an instance of TimedNumber that changes its value over time.
-
-conf:
-
-```javascript
-{
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.node-datetime.createTimedState" id="apidoc.module.node-datetime.createTimedState">module node-datetime.createTimedState</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.node-datetime.createTimedState.createTimedState" id="apidoc.element.node-datetime.createTimedState.createTimedState">
-        function <span class="apidocSignatureSpan">node-datetime.</span>createTimedState
-        <span class="apidocSignatureSpan">(conf)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">createTimedState = function (conf) {
-	return new TimedState(conf);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-// store it in database as JSON
-var json = timedNumber.toOjbect();
-// read json back from the database and reconstruct timed number object
-var timedNumber2 = datetime.createTimedNumber(json);
-// timedNumber2 will have the same state as timedNumber
-```
-
-### .<span class="apidocCodeKeywordSpan">createTimedState</span>(conf)
-
-Returns an instance of TimedState object that changes its state over time.
-
-conf:
-
-```
-{
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.node-datetime.datetime" id="apidoc.module.node-datetime.datetime">module node-datetime.datetime</a></h1>
 
 
@@ -1212,7 +1011,23 @@ Example:
 
 	return list;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+	});
+
+	it(&#x27;can return a list of date time per hour between 2015-04-30 20:40:32.332 and 2015-05-01 17:05:10.223&#x27;, function () {
+		var start = datetime.create(&#x27;2015-04-30 20:40:32.332&#x27;);
+		var end = datetime.create(&#x27;2015-05-01 17:05:10.223&#x27;);
+		var format = &#x27;Y/m/d H:M:S.N&#x27;;
+		var list = start.<span class="apidocCodeKeywordSpan">getHoursInRange</span>(end);
+		for (var i = 0, len = list.length; i &#x3c; len; i++) {
+			var hour = list[i];
+			var check = datetime.create(start.getTime());
+			check.offsetInHours(i);
+			assert.equal(hour.format(format), check.format(format));
+		}
+	});
+...</pre></li>
     </ul>
 
 
@@ -1293,20 +1108,21 @@ Now `.now()` returns a calculated current timestamp in milliseconds with time of
 	this._updateDelta();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-|d|Date with leading 0|
-|H|Hours with leading 0 in 24 hours format|
-|I|Hours with leading 0 in 12 hours format|
-|M|Minutes with leading 0|
-|S|Seconds with leading 0|
-|N|Milliseconds with leading 0|
+	if (!defaultFormat &#x26;&#x26; globalDefaultFormat) {
+		defaultFormat = globalDefaultFormat;
+	}
 
-#### .<span class="apidocCodeKeywordSpan">offsetInDays</span>(offset [number])
+	var d = new DateTime(now, defaultFormat);
 
-Offests the date.
+	if (offsets.days !== 0) {
+		d.<span class="apidocCodeKeywordSpan">offsetInDays</span>(offsets.days);
+	}
 
-**NOTE**: By giving more than 30 days or 365 days, it can exceed current year or month.
+	if (offsets.hours !== 0) {
+		d.offsetsInHours(offsets.hours);
+	}
 
-Example:
+	return d;
 ...</pre></li>
     </ul>
 
@@ -1341,106 +1157,6 @@ Offests the hours.
 
 Example:
 ...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.node-datetime.setDefaultFormat" id="apidoc.module.node-datetime.setDefaultFormat">module node-datetime.setDefaultFormat</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.node-datetime.setDefaultFormat.setDefaultFormat" id="apidoc.element.node-datetime.setDefaultFormat.setDefaultFormat">
-        function <span class="apidocSignatureSpan">node-datetime.</span>setDefaultFormat
-        <span class="apidocSignatureSpan">(format)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">setDefaultFormat = function (format) {
-	globalDefaultFormat = format;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-Sets a shared offset in hours.
-
-If this is set, all instances of DateTime object will have the given offset in hours.
-
-This can be individually overridden.
-
-#### .<span class="apidocCodeKeywordSpan">setDefaultFormat</span>(defaultFormat [string])
-
-Sets a shared default format.
-
-If this is set, all instances of DateTime object will have the given format as default.
-
-This can be individually overridden.
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.node-datetime.setOffsetInDays" id="apidoc.module.node-datetime.setOffsetInDays">module node-datetime.setOffsetInDays</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.node-datetime.setOffsetInDays.setOffsetInDays" id="apidoc.element.node-datetime.setOffsetInDays.setOffsetInDays">
-        function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInDays
-        <span class="apidocSignatureSpan">(d)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">setOffsetInDays = function (d) {
-
-	if (isNaN(d)) {
-		throw new Error(&#x27;invalidOffset&#x27;);
-	}
-
-	offsets.days = d;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-```javascript
-var datetime = require(&#x27;node-datetime&#x27;);
-var dt = datetime.create();
-var fomratted = dt.format(&#x27;m/d/Y H:M:S&#x27;);
-// e.g. 04/28/2015 21:13:09
-```
-
-#### .<span class="apidocCodeKeywordSpan">setOffsetInDays</span>(offsetDays [number])
-
-Sets a shared offset in days.
-
-If this is set, all instances of DateTime object will have the given offset in days.
-
-This can be individually overridden.
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.node-datetime.setOffsetInHours" id="apidoc.module.node-datetime.setOffsetInHours">module node-datetime.setOffsetInHours</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.node-datetime.setOffsetInHours.setOffsetInHours" id="apidoc.element.node-datetime.setOffsetInHours.setOffsetInHours">
-        function <span class="apidocSignatureSpan">node-datetime.</span>setOffsetInHours
-        <span class="apidocSignatureSpan">(h)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">setOffsetInHours = function (h) {
-
-	if (isNaN(h)) {
-		throw new Error(&#x27;invalidOffset&#x27;);
-	}
-
-	offsets.hours = h;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
